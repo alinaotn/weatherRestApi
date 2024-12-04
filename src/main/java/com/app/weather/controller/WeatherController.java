@@ -25,6 +25,7 @@ public class WeatherController {
     public WeatherController(WeatherService weatherService, ModelMapper modelMapper, UserService userService) {
         this.weatherService = weatherService;
         this.userService = userService;
+
     }
 
     @PostMapping("/weather")
