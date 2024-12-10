@@ -22,7 +22,7 @@ public class WeatherEntity {
 
     private String location;
 
-    private Float temperature;
+    private Double temperature;
 
     private LocalTime timestamp;
 

@@ -60,4 +60,14 @@ public class UserServiceImpl implements UserService {
     public boolean findApiToken(String apiToken) {
         return userRepository.existsByApiToken(apiToken);
     }
+
+    @Override
+    public Long findUserIdByToken(String apiToken) {
+        return userRepository.findByApiToken(apiToken);
+    }
+
+    @Override
+    public UserEntity findUserByToken(String apiToken) {
+        return userRepository.findUserByApiToken(apiToken);
+    }
 }

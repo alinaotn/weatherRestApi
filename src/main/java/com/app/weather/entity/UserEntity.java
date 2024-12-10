@@ -1,12 +1,10 @@
 package com.app.weather.entity;
 
-import com.fasterxml.jackson.annotation.JsonTypeId;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import org.springframework.aot.generate.GenerationContext;
 
 @Data
 @Entity

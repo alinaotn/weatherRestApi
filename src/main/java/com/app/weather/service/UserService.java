@@ -19,4 +19,8 @@ public interface UserService {
     void deleteByEmailAndPassword(String email, String password);
 
     boolean findApiToken(String substring);
+
+    Long findUserIdByToken(String apiToken);
+
+    UserEntity findUserByToken(String apiToken);
 }

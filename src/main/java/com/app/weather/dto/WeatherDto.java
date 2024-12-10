@@ -12,10 +12,7 @@ import java.time.LocalTime;
 @NoArgsConstructor
 @Builder
 public class WeatherDto {
-
     private String location;
-    private String temperature;
+    private Double temperature;
     private LocalTime timestamp;
-    private UserDto userDto;
-
 }
