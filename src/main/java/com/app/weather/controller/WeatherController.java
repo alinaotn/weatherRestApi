@@ -41,7 +41,7 @@ public class WeatherController {
     public ResponseEntity<WeatherReturnDto> getWeatherByLocation(@RequestBody WeatherByLocationRequestDto weatherByLocationRequestDto, @RequestHeader("authorization") String authorizationHeader) {
         if (!userService.findApiToken(authorizationHeader.substring(7))) {
             return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
-        };
+        }
 
         Long userId = userService.findUserIdByToken(authorizationHeader.substring(7));
         UserEntity user = userService.findUserByToken(authorizationHeader.substring(7));

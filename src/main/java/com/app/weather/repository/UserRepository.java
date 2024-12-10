@@ -1,6 +1,5 @@
 package com.app.weather.repository;
 
-import com.app.weather.dto.UserDto;
 import com.app.weather.entity.UserEntity;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.Modifying;

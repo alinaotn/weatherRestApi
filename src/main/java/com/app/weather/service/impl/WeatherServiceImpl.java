@@ -6,13 +6,8 @@ import com.app.weather.entity.WeatherEntity;
 import com.app.weather.repository.WeatherRepository;
 import com.app.weather.service.WeatherService;
 import org.springframework.cache.annotation.Cacheable;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
-
-import java.time.LocalDateTime;
-import java.util.concurrent.TimeUnit;
-
 
 @Service
 public class WeatherServiceImpl implements WeatherService {
