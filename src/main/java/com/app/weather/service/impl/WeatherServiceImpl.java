@@ -9,6 +9,8 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
+import java.util.List;
+
 @Service
 public class WeatherServiceImpl implements WeatherService {
 
@@ -34,5 +36,10 @@ public class WeatherServiceImpl implements WeatherService {
     @Override
     public void saveRequest(WeatherEntity weatherEntity) {
         weatherRepository.save(weatherEntity);
+    }
+
+    @Override
+    public List<WeatherEntity> getResponses(String location) {
+        return weatherRepository.getWeatherEntityByLocation(location);
     }
 }

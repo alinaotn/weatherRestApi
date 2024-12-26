@@ -17,6 +17,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalTime;
+import java.util.List;
 
 
 @RestController
@@ -48,12 +49,17 @@ public class WeatherController {
         // TODO: check if request already exist
         // if yes and time is less then 30 seconds get values from cache
         // if no call weatherApi and save request
+        List<WeatherEntity> weatherEntities = weatherService.getResponses(weatherByLocationRequestDto.getLocation());
+        logger.info(weatherEntities.toString());
 
+        weatherEntities.forEach(weatherEntity -> {
+            logger.info(weatherEntity.toString());
+
+        });
         WeatherReturnDto weatherResponse =  weatherService.callWeatherApi(weatherByLocationRequestDto.getLocation());
-        WeatherDto request = new WeatherDto(weatherResponse.location.name, weatherResponse.getCurrent().getTemp_c(), LocalTime.now());
-        logger.info(request.toString());
-        WeatherEntity weatherRequest = modelMapper.map(request, WeatherEntity.class);
-        weatherService.saveRequest(weatherRequest);
+//        WeatherDto request = new WeatherDto(weatherResponse.location.name, weatherResponse.getCurrent().getTemp_c(), LocalTime.now(), user);
+//        WeatherEntity weatherRequest = modelMapper.map(request, WeatherEntity.class);
+//        weatherService.saveRequest(weatherRequest);
         return new ResponseEntity<>(weatherResponse, HttpStatus.OK);
     }
 
